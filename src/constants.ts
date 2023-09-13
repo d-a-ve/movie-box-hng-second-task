@@ -85,4 +85,4 @@ export const TMDB_GET_OPTIONS = {
   },
 };
 
-export const TMDB_IMG_URL = "http://image.tmdb.org/t/p/";
+export const TMDB_IMG_URL = "https://image.tmdb.org/t/p/";

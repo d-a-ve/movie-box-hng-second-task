@@ -16,25 +16,7 @@ const CardHeader = ({
 
   return isSearchCard ? (
     <div className="overflow-hidden">
-      <source
-        srcSet={`${TMDB_IMG_URL}w342/${moviePoster}`}
-        media="(max-width: 480px)"
-      />
-      <source
-        srcSet={`${TMDB_IMG_URL}w500/${moviePoster}`}
-        media="(max-width: 1024px)"
-      />
-      <img
-        className="h-12 w-14 rounded-full object-cover sm:w-16 xs:h-10 xs:w-14"
-        src={moviePosterUrl}
-        loading="lazy"
-        alt=""
-      />
-    </div>
-  ) : (
-    // movie card
-    <div className="relative w-full">
-      <div className="w-full">
+      <picture>
         <source
           srcSet={`${TMDB_IMG_URL}w342/${moviePoster}`}
           media="(max-width: 480px)"
@@ -44,11 +26,33 @@ const CardHeader = ({
           media="(max-width: 1024px)"
         />
         <img
-          className="h-[370px] w-full object-cover object-center"
+          className="h-12 w-14 rounded-full object-cover sm:w-16 xs:h-10 xs:w-14"
           src={moviePosterUrl}
+          loading="lazy"
           alt=""
-          data-testid="movie-poster"
         />
+      </picture>
+    </div>
+  ) : (
+    // movie card
+    <div className="relative w-full">
+      <div className="w-full">
+        <picture>
+          <source
+            srcSet={`${TMDB_IMG_URL}w342/${moviePoster}`}
+            media="(max-width: 480px)"
+          />
+          <source
+            srcSet={`${TMDB_IMG_URL}w500/${moviePoster}`}
+            media="(max-width: 1024px)"
+          />
+          <img
+            className="h-[370px] w-full object-cover object-center"
+            src={moviePosterUrl}
+            alt=""
+            data-testid="movie-poster"
+          />
+        </picture>
       </div>
       <div className="absolute top-4 z-10 flex w-full items-center justify-end px-4">
         {/* <div className="flex items-center justify-center rounded-xl bg-gray-100 bg-opacity-50 px-2 py-0.5 backdrop-blur-none">
