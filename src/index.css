@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply text-fs-0;
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .grid-center {
+    @apply col-start-2 col-end-3;
+  }
+  .grid-center-placement {
+    @apply grid-center col-start-2 col-end-3 
+  }
+  .grid-full {
+    @apply col-start-1 col-end-4
+  }
+  .grid-full-center {
+    @apply grid-full px-[5%] md:px-[1.5rem]
+  }
+}
