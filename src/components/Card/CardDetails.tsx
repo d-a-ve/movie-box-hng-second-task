@@ -34,7 +34,7 @@ const CardDetails = ({
       >
         {new Date(releaseDate).getTime()}
       </p>
-      <p className="font-bold text-gray-900">{movieTitle}</p>
+      <p className="font-bold text-gray-900" data-testid="movie-title">{movieTitle}</p>
       <RatingsBox isHero={false} imdbRating={imdbRating} />
       <p className="text-fs--2 font-bold text-gray-400">
         {genres && getGenresText(genres).join(", ")}
