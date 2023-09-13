@@ -6,6 +6,7 @@ import { IGetTMDBErrorResponse } from "@customTypes/IGetTMDBErrorResponse";
 import { IMovieResponse } from "@customTypes/IMovieResponse";
 import { useParams } from "react-router-dom";
 import Loader from "@components/Loader/Loader";
+import BackButton from "@components/Button/BackButton";
 
 const MoviePage = () => {
   const { movieId } = useParams();
@@ -18,7 +19,12 @@ const MoviePage = () => {
     <>
       <div className="grid-center mb-12">
         {status === "loading" && <Loader />}
-        {status === "error" && <p>Ah, something went wrong!!</p>}
+        {status === "error" && (
+          <div className="my-8 flex flex-col items-center gap-4">
+            <p>Uh oh, something went wrong!</p>
+            <BackButton />
+          </div>
+        )}
       </div>
 
       {status === "success" && (

@@ -7,10 +7,17 @@ const Home = () => {
       <Hero />
       <MovieList
         headingElement={
+          <h2 className="text-fs-3 font-bold text-black">Top 10 Movies</h2>
+        }
+        url="movie/top_rated?language=en-US&page=1"
+        queryId={["top-rated movies"]}
+      />
+      <MovieList
+        headingElement={
           <h2 className="text-fs-3 font-bold text-black">Trending Movies</h2>
         }
         url="trending/movie/day?language=en-US"
-        queryId={["movies"]}
+        queryId={["trending movies"]}
       />
     </>
   );

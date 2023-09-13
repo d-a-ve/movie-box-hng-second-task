@@ -4,6 +4,7 @@ import { IGetTMDBResponse } from "@customTypes/IGetTMDBResponse";
 import { IGetTMDBErrorResponse } from "@customTypes/IGetTMDBErrorResponse";
 import { TMDB_IMG_URL } from "@constants";
 import Loader from "@components/Loader/Loader";
+import BackButton from "@components/Button/BackButton";
 
 const Hero = () => {
   const { status, data } = useFetchQuery<
@@ -15,7 +16,10 @@ const Hero = () => {
       <div className="grid-full-center">
         {status === "loading" && <Loader />}
         {status === "error" && (
-          <p>Something went wrong, please try searching for another movie.</p>
+          <div className="my-8 flex flex-col items-center gap-4">
+            <p>Uh oh, something went wrong!</p>
+            <BackButton />
+          </div>
         )}
       </div>
       {status === "success" && data && (

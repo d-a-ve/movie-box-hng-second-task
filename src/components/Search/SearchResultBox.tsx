@@ -1,3 +1,4 @@
+import BackButton from "@components/Button/BackButton";
 import SearchCard from "@components/Card/SearchCard";
 import Loader from "@components/Loader/Loader";
 import { TSearchResultBoxProps } from "@customTypes/TSearchResultBoxProps";
@@ -12,7 +13,10 @@ const SearchResultBox = ({
         <div className="px-2">
           {status === "loading" && <Loader />}
           {status === "error" && (
-            <p>Something went wrong, please try searching for another movie.</p>
+            <div className="my-8 flex flex-col items-center gap-4">
+              <p>Uh oh, something went wrong!</p>
+              <BackButton />
+            </div>
           )}
         </div>
         {data?.results.map((search) => (

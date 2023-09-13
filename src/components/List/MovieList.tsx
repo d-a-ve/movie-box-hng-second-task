@@ -1,5 +1,6 @@
 import MovieCard from "@components/Card/MovieCard";
 import Loader from "@components/Loader/Loader";
+import BackButton from "@components/Button/BackButton";
 import { IGetTMDBErrorResponse } from "@customTypes/IGetTMDBErrorResponse";
 import { IGetTMDBResponse } from "@customTypes/IGetTMDBResponse";
 import { TMoviesListProps } from "@customTypes/TMoviesListProps";
@@ -14,7 +15,12 @@ const MovieList = ({ headingElement, queryId, url }: TMoviesListProps) => {
   return (
     <div className="grid-center mb-12">
       {status === "loading" && <Loader />}
-      {status === "error" && <p>Ah, something went wrong!!</p>}
+      {status === "error" && (
+        <div className="my-8 flex flex-col items-center gap-4">
+          <p>Uh oh, something went wrong!</p>
+          <BackButton />
+        </div>
+      )}
 
       {status === "success" && data.results.length != 0 && slicedData && (
         <>
