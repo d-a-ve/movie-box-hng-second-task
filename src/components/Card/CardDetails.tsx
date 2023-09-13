@@ -22,7 +22,9 @@ const CardDetails = ({
       >
         {movieTitle}
       </p>
-      <p className="text-fs--2 font-bold text-gray-400">{releaseDate}</p>
+      <p className="text-fs--2 font-bold text-gray-400">
+        {new Date(releaseDate).getTime()}
+      </p>
     </div>
   ) : (
     <div className="flex w-full flex-col items-start justify-start gap-2">
@@ -30,7 +32,7 @@ const CardDetails = ({
         className="text-fs--2 font-bold text-gray-400"
         data-testid="movie-release-date"
       >
-        {releaseDate}
+        {new Date(releaseDate).getTime()}
       </p>
       <p className="font-bold text-gray-900">{movieTitle}</p>
       <RatingsBox isHero={false} imdbRating={imdbRating} />

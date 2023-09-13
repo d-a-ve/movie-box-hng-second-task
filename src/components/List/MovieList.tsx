@@ -10,17 +10,17 @@ const MovieList = ({ headingElement, queryId, url }: TMoviesListProps) => {
     IGetTMDBResponse,
     IGetTMDBErrorResponse
   >(queryId, url);
-
+  const slicedData = data?.results.slice(0, 10);
   return (
     <div className="grid-center mb-12">
       {status === "loading" && <Loader />}
       {status === "error" && <p>Ah, something went wrong!!</p>}
 
-      {status === "success" && data.results.length != 0 && (
+      {status === "success" && data.results.length != 0 && slicedData && (
         <>
           <div className="mb-6">{headingElement}</div>
           <div className="grid grid-cols-4 gap-x-10 gap-y-16 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
-            {data.results.map((movie) => (
+            {slicedData.map((movie) => (
               <MovieCard
                 key={movie.id}
                 movieId={movie.id}

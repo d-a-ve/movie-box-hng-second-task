@@ -19,19 +19,16 @@ const MovieDetailsHeader = ({
           {movieTitle}
         </h1>
         <span className="text-neutral-700">•</span>
-        <span
+        <p
           className="text-2xl font-medium text-neutral-700"
           data-testid="movie-release-date"
         >
           {new Date(releaseDate).getTime()}
-        </span>
+        </p>
         <span className="text-neutral-700">•</span>
-        <span
-          className="text-2xl font-medium text-neutral-700"
-          data-testid="movie-runtime"
-        >
-          {movieRuntime}mins
-        </span>
+        <p className="text-2xl font-medium text-neutral-700">
+          <span data-testid="movie-runtime">{movieRuntime}</span>mins
+        </p>
       </div>
       <GenreTags genres={genres} />
     </div>
