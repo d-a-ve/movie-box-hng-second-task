@@ -1,8 +1,8 @@
 {
   "redirects": [
     {
-      "source": "/(.*)",
-      "destination": "/",
+      "source": "/movie/:path",
+      "destination": "/movie/:path",
       "permanent": false
     }
   ]
