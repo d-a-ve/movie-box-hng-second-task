@@ -2,8 +2,7 @@
   "rewrites": [
     {
       "source": "/movie/:path",
-      "destination": "/movie/:path",
-      "permanent": false
+      "destination": "/movie/:path"
     }
   ]
 }
